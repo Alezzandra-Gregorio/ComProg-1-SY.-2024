@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    /*The user will input a Philippine amount then 
+    the certain amountwill be converted to different 
+    currencies namely: US Dollar, Euro. Yuan, Krone, Sheqel
+    and Dinar*/
+    
+    float pesoToDollar = 43.33089;
+    float dollarAmount = 1.000;
+    float euroAmount = 0.734719;
+    float yuanAmount = 6.346934;
+    float korunaAmount = 18.77263;
+    float kroneAmount = 5.449007;
+    float sheqelAmount = 3.726334;
+    float dinarAmount = 0.274588;
+    
+    float pesoAmount;
+    cout << "Enter Philippine peso: ";
+    cin >> pesoAmount;
+    float x = pesoAmount / pesoToDollar;
+    
+    cout << "The amount " << pesoAmount << " is equivalent to: " << endl;
+    cout << "US Dollar: " << x << endl;
+    cout << "Euro: " <<  x * euroAmount << endl;
+    cout << "Yuan: " << x * yuanAmount << endl;
+    cout << "Koruna: " << x * korunaAmount << endl;
+    cout << "Krone: " << x * kroneAmount << endl;
+    cout << "Sheqel: " << x * sheqelAmount << endl;
+    cout << "Dinar: " << x * dinarAmount << endl;
+    
+    return 0;
+}
