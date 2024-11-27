@@ -1,0 +1,49 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    const double philhealthContribution = 1000.0;
+    const double pagibigContribution = 800.0;
+    const double sssContribution = 1200.0;
+    const double taxRate = 0.12;
+
+    string payrollPeriod, employeeID, employeeName;
+    double monthlySalary, latesAndAbsencesMinutes, hourlyRate, latesAndAbsences, tax, totalDeductions, netPay;
+
+    cout << "Enter specified information" << endl;
+    cout << "\nPayroll period (Ex. January 1-31, 2019): ";
+    getline(cin, payrollPeriod);
+    cout << "Emmployee ID: ";
+    getline(cin, employeeID);
+    cout << "Employee name: ";
+    getline(cin, employeeName);
+    cout << "Monthly salary: Php ";
+    cin >> monthlySalary;
+    cout << "Total lates and absences (in minutes): ";
+    cin >> latesAndAbsencesMinutes;
+
+    hourlyRate = (monthlySalary / 30) / 8; 
+    latesAndAbsences = (latesAndAbsencesMinutes / 60); 
+    tax = monthlySalary * taxRate; 
+    totalDeductions = latesAndAbsences + philhealthContribution + pagibigContribution + sssContribution + tax;
+    netPay = monthlySalary - totalDeductions;
+
+    cout << "\nFEU – Institute of Technology\n" << endl;
+    cout << "Payroll Period: " << payrollPeriod << endl;
+    cout << "\nEmployee ID: " << employeeID << endl;
+    cout << "Employee Name: " << employeeName << "\n" << endl;
+    cout << "INCOME" << endl;
+    cout << "Monthly Salary Php" << fixed << setprecision(2) << monthlySalary << endl;
+    cout << "\nDEDUCTIONS" << endl;
+    cout << "Lates and absences     (" << fixed << setprecision(2) << latesAndAbsences << ")" << endl;
+    cout << "Philhealth             (" << philhealthContribution << ")" << endl;
+    cout << "Pag-ibig               (" << pagibigContribution << ")" << endl;
+    cout << "SSS                    (" << sssContribution << ")" << endl;
+    cout << "Withholding tax        (" << fixed << setprecision(2) << tax << ")" << endl;
+    cout << "\nTotal Earnings: Php" << fixed << setprecision(2) << monthlySalary << endl;
+    cout << "Total Deductions: Php" << fixed << setprecision(2) << totalDeductions << endl;
+    cout << "Net Pay: Php" << fixed << setprecision(2) << netPay << endl;
+
+    return 0;
+}
